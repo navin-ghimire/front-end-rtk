@@ -1,10 +1,10 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { baseUrl } from '../../constants/api_urls';
 
 
 export const productApi = createApi({
   reducerPath: 'productApi',
   baseQuery: fetchBaseQuery({ baseUrl: `${baseUrl}/products` }),
-
 
   endpoints: (builder) => ({
 
@@ -13,7 +13,8 @@ export const productApi = createApi({
         url: '/',
         method: 'GET',
 
-      })
+      }),
+      providesTags: ['Products']
     }),
 
     getProductById: builder.query({
@@ -21,20 +22,20 @@ export const productApi = createApi({
         url: `/${id}`,
         method: 'GET',
 
-      })
+      }),
+      providesTags: ['Products']
     }),
 
-
-      addProduct: builder.mutation({
+    addProduct: builder.mutation({
       query: (q) => ({
-        url: `/`,
+        url: '/',
         body: q.body,
         headers: {
           Authorization: q.token
         },
         method: 'POST',
-
-      })
+      }),
+      invalidatesTags: ['Products']
     }),
 
     updateProduct: builder.mutation({
@@ -45,8 +46,8 @@ export const productApi = createApi({
           Authorization: q.token
         },
         method: 'PATCH',
-
-      })
+      }),
+      invalidatesTags: ['Products']
     }),
 
 
@@ -57,8 +58,8 @@ export const productApi = createApi({
           Authorization: q.token
         },
         method: 'DELETE',
-
-      })
+      }),
+      invalidatesTags: ['Products']
     }),
 
 
