@@ -6,6 +6,9 @@ import Login from './features/auth/Login';
 import Register from './features/auth/Register';
 import ProductAdmin from './features/admin/ProductAdmin';
 import AddForm from './features/admin/AddForm';
+import ProductEdit from './features/admin/ProductEdit/ProductEdit';
+import ProductDetail from './features/product/ProductDetail';
+import AdminRoute from './ui/AdminRoute';
 
 
 const App = () => {
@@ -29,14 +32,33 @@ const App = () => {
           path: 'register',
           element: <Register />
         },
+
+        //admin routes
+
         {
-          path: 'product-admin',
-          element: <ProductAdmin />
+          element: <AdminRoute />,
+          children: [
+            {
+              path: 'product-admin',
+              element: <ProductAdmin />
+            },
+            {
+              path: 'product-add',
+              element: <AddForm />
+            },
+            {
+              path: 'product-edit/:id',
+              element: <ProductEdit />
+            }
+          ]
         },
+
+
         {
-          path: 'product-add',
-          element: <AddForm />
+          path: 'product-detail/:id',
+          element: <ProductDetail />
         },
+
       ]
     }
   ]);

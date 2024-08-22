@@ -91,7 +91,7 @@ const Header = () => {
             <MenuHandler>
               <Button
                 variant="text"
-                color="blue-gray"
+
                 className="flex items-center gap-1 rounded-full py-0.5 pr-2 pl-0.5 lg:ml-auto"
               >
                 <Avatar
@@ -118,9 +118,10 @@ const Header = () => {
                       switch (value) {
                         case 'exist':
                           dispatch(removeUser());
+                          break;
                         case 'products':
                           nav('/product-admin')
-
+                          break;
                           closeMenu();
 
                       }
