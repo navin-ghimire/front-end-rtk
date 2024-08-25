@@ -46,7 +46,7 @@ const AddForm = () => {
         formData.append('stock', Number(val.stock));
         try {
 
-          console.log(formData);
+
 
           await addProduct({
             body: formData,

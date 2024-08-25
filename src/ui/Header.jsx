@@ -120,9 +120,11 @@ const Header = () => {
                           dispatch(removeUser());
                           break;
                         case 'products':
-                          nav('/product-admin')
-                          break;
+                          nav('/product-admin');
                           closeMenu();
+                          break;
+                          default:
+                            break;
 
                       }
                     }}

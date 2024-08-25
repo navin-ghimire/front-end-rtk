@@ -4,21 +4,21 @@ import ProductCard from '../product/ProductCard';
 
 const Main = () => {
 
-  const {isLoading, error, data} = useGetAllProductsQuery();
+  const { isLoading, error, data } = useGetAllProductsQuery();
 
-  if(isLoading){
-    return <lottie-player src="https://lottie.host/06012c46-087e-4903-8a87-aecdd78843b6/Z7iEfPcNpH.json" background="##FFFFFF" speed="1" loop controls autoplay direction="1" mode="normal"></lottie-player>
-  }
+  if (isLoading) {
+    return <lottie-player src="https://lottie.host/baaa78ba-aff1-4e12-ba56-22d35b9ba72c/ujDLg3coH7.json" background="transparent" speed="1" loop autoplay></lottie-player>
+  };
 
-
-
+//console.log(error);
 
   return (
-    <div className='p-4 grid grid-cols-3 gap-4'>
+    <div className='p-4 grid grid-cols-3 gap-6'>
 
-   {data && data.map((product) => {
-    return <ProductCard key={product._id} product={product} />
-   })}
+      {data && data.map((product) => {
+        return <ProductCard key={product._id} product={product} />
+      })}
+
 
 
     </div>

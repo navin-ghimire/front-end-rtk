@@ -10,10 +10,10 @@ const ProductDetail = () => {
   const { isLoading, error, data } = useGetProductByIdQuery(id);
 
   if (isLoading) {
-    return <lottie-player src="https://lottie.host/06012c46-087e-4903-8a87-aecdd78843b6/Z7iEfPcNpH.json" background="##FFFFFF" speed="1" loop controls autoplay direction="1" mode="normal"></lottie-player>
-  }
+    return <lottie-player src="https://lottie.host/baaa78ba-aff1-4e12-ba56-22d35b9ba72c/ujDLg3coH7.json" background="transparent" speed="1" loop autoplay></lottie-player>
+  };
 
-
+  //console.log(error);
 
   return (
     <>

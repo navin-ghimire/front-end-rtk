@@ -1,6 +1,3 @@
-
-
-
 export const setUser = (user) => {
   localStorage.setItem('user', JSON.stringify(user));
 }
@@ -17,8 +14,7 @@ export const removeUserFromLocal = () => {
 }
 
 
-
- export const setCarts = (carts) => {
+export const setCarts = (carts) => {
   localStorage.setItem('carts', JSON.stringify(carts));
 }
 

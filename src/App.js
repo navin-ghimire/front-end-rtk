@@ -9,6 +9,7 @@ import AddForm from './features/admin/AddForm';
 import ProductEdit from './features/admin/ProductEdit/ProductEdit';
 import ProductDetail from './features/product/ProductDetail';
 import AdminRoute from './ui/AdminRoute';
+import CartPage from './features/cart/CartPage';
 
 
 const App = () => {
@@ -57,6 +58,11 @@ const App = () => {
         {
           path: 'product-detail/:id',
           element: <ProductDetail />
+        },
+
+        {
+          path: 'cart-page',
+          element: <CartPage />
         },
 
       ]

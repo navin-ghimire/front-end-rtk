@@ -1,6 +1,5 @@
-import { useNavigate } from "react-router";
 import { Avatar, Button, Card, Typography } from "@material-tailwind/react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useGetAllProductsQuery } from "../product/productApi";
 import { imageUrl } from "../../constants/api_urls";
 
@@ -12,8 +11,8 @@ const AdminProducts = () => {
     "Edit", "Delete"];
 
   if (isLoading) {
-    return <h1>Loading....</h1>;
-  }
+    return <lottie-player src="https://lottie.host/baaa78ba-aff1-4e12-ba56-22d35b9ba72c/ujDLg3coH7.json" background="transparent" speed="1" loop autoplay></lottie-player>
+  };
 
 
   return (
@@ -72,7 +71,7 @@ const AdminProducts = () => {
                     </Typography>
                   </td>
                   <td className={classes}>
-                    <Link to={`/product-edit/${_id}`} replace> <Button color="light-green" size="sm">Edit</Button> </Link>
+                    <Link to={`/product-edit/${_id}`} > <Button color="light-green" size="sm">Edit</Button> </Link>
                   </td>
 
                   <td className={classes}>

@@ -100,7 +100,7 @@ const ProductEditForm = ({ product }) => {
 
 
       },
-      //  validationSchema: productSchema
+       validationSchema: productSchema
 
     });
 
