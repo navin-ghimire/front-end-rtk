@@ -5,12 +5,14 @@ import useAuth from '../../hooks/useAuth';
 import { imageUrl } from '../../constants/api_urls';
 import { setToCarts } from './cartSlice';
 import CustomDialog from '../../ui/CustomDialog';
+import { useNavigate } from 'react-router';
 
 
 const CartPage = () => {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(!open);
+  const nav = useNavigate();
 
 
   const { carts } = useSelector((state) => state.cartSlice);
@@ -19,7 +21,7 @@ const CartPage = () => {
   const total = carts.reduce((a, b) => a + b.qty * b.price, 0);
 
 
-  console.log(carts);
+
 
   const handleSubmit = async () => {
 
@@ -54,7 +56,13 @@ const CartPage = () => {
             <h1>Total</h1>
             <p>{total}</p>
           </div>
-          <Button onClick={handleOpen} className='mt-10'>Place An Order</Button>
+          <Button disabled={user?.isAdmin} onClick={() => {
+          if(user && !user?.isAdmin){
+          handleOpen();
+          }else{
+            nav('/login');
+          }
+          }} className='mt-10'>Place An Order</Button>
 
           <CustomDialog open={open} handleOpen={handleOpen} />
 

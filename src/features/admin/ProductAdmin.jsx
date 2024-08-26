@@ -15,6 +15,13 @@ const AdminProducts = () => {
   };
 
 
+
+  if (isError) {
+    return <Typography color="red">Failed to load products: {error.message}</Typography>;
+  }
+
+
+
   return (
     <div className="p-5">
       <div className="mb-4 flex justify-between">

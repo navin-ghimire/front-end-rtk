@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 import { useDispatch } from "react-redux";
 import { addUser } from "./userSlice";
 
-const loginSchema = Yup.object({
+export const loginSchema = Yup.object({
   email: Yup.string().email().required(),
   password: Yup.string().required(),
 });

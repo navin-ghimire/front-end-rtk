@@ -121,10 +121,14 @@ const Header = () => {
                           break;
                         case 'products':
                           nav('/product-admin');
-                          closeMenu();
                           break;
-                          default:
-                            break;
+                          case 'profile':
+                          nav('/user-profile');
+                          break;
+
+
+
+                          closeMenu();
 
                       }
                     }}
