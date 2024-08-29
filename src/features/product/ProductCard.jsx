@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router';
 
 
 const ProductCard = ({ product: { image, title, description, rating, _id } }) => {
+  
   const nav = useNavigate();
   return (
     <Card onClick={() => nav(`/product-detail/${_id}`)} className="w-full shadow-lg cursor-pointer hover:shadow-2xl">

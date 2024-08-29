@@ -1,19 +1,40 @@
 import React from 'react'
-import { loginSchema } from '../auth/Login';
 import { Button, Card, Input, Typography } from '@material-tailwind/react';
+import * as Yup from 'yup';
 import { useFormik } from 'formik';
+import { useUpdateProfileMutation } from '../auth/userApi';
+import { toast } from 'react-toastify';
+import { addUser } from '../auth/userSlice';
+import { useDispatch } from 'react-redux';
+
+
+const updateSchema = Yup.object({
+  email: Yup.string().email().required(),
+  password: Yup.string().required(),
+});
+
 
 const UserProfile = ({ user }) => {
+  const [updateUser, {isLoading}] = useUpdateProfileMutation();
+  const dispatch = useDispatch();
 
 
-  const { values, errors, handleSubmit, handleChange, touched } = useFormik({
+  const { values, errors, handleSubmit, handleChange, touched, } = useFormik({
     initialValues: {
-      email: user.email,
-      fullname: user.fullname
+      email: user?.email,
+      fullname: user?.fullname
     },
     onSubmit: async (val) => {
+      try {
+        const newUser = {...user, email: val.email, fullname: val.fullname}
+        const response = await updateUser(newUser).unwrap();
+        dispatch(addUser(newUser));
+        toast.success('successfully updated');
+      } catch (err) {
+        toast.error(err.data?.message);
+      }
     },
-    validationSchema: loginSchema
+    validationSchema: updateSchema
   });
 
 
@@ -27,7 +48,17 @@ const UserProfile = ({ user }) => {
 
         <form className="mt-5 mb-2 " onSubmit={handleSubmit}>
           <div className="mb-1 flex flex-col gap-6">
+          <Input
+              type="text"
+              size="lg"
+              name="fullname"
+              onChange={handleChange}
+              value={values.fullname}
+              label="Fullname"
+               
+            />
 
+            {errors.fullname && touched.fullname && <h1 className='text-red-600'>{errors.fullname}</h1>}
             <Input
               name="email"
               onChange={handleChange}
@@ -39,17 +70,7 @@ const UserProfile = ({ user }) => {
             />
             {errors.email && touched.email && <h1 className='text-red-600'>{errors.email}</h1>}
 
-            <Input
-              type="password"
-              size="lg"
-              name="password"
-              onChange={handleChange}
-              value={values.password}
-              placeholder="********"
-              label="Password"
-            />
-
-            {errors.password && touched.password && <h1 className='text-red-600'>{errors.password}</h1>}
+            
           </div>
 
           <Button loading={isLoading} type="submit" className="mt-6" fullWidth>
