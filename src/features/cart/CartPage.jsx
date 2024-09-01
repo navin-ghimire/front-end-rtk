@@ -14,7 +14,6 @@ const CartPage = () => {
   const handleOpen = () => setOpen(!open);
   const nav = useNavigate();
 
-
   const { carts } = useSelector((state) => state.cartSlice);
   const user = useAuth();
   const dispatch = useDispatch();
@@ -23,9 +22,6 @@ const CartPage = () => {
 
 
 
-  const handleSubmit = async () => {
-
-  }
 
   return (
     <div className='p-5'>
@@ -37,6 +33,7 @@ const CartPage = () => {
               return <div className='grid grid-cols-4 gap-12' key={cart._id}>
                 <img className='w-full h-36 object-cover' src={`${imageUrl}${cart.image}`} alt="" />
                 <div>
+                  <h1>{cart.title}</h1>
                   <select defaultValue={cart.qty} name="qty" id="" onChange={(e) => {
 
                     dispatch(setToCarts({ ...cart, qty: Number(e.target.value) }));
@@ -57,14 +54,15 @@ const CartPage = () => {
             <p>{total}</p>
           </div>
           <Button disabled={user?.isAdmin} onClick={() => {
-          if(user && !user?.isAdmin){
-          handleOpen();
-          }else{
-            nav('/login');
-          }
+            if (user && !user?.isAdmin) {
+              handleOpen();
+            } else {
+              nav('/login');
+            }
+
           }} className='mt-10'>Place An Order</Button>
 
-          <CustomDialog open={open} handleOpen={handleOpen} />
+          <CustomDialog open={open} handleOpen={handleOpen} user={user} total={total} carts={carts} totalAmount={total} />
 
 
 

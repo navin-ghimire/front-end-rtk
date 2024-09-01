@@ -13,7 +13,7 @@ const ProductDetail = () => {
     return <lottie-player src="https://lottie.host/baaa78ba-aff1-4e12-ba56-22d35b9ba72c/ujDLg3coH7.json" background="transparent" speed="1" loop autoplay></lottie-player>
   };
 
-  //console.log(error);
+
 
   return (
     <>
@@ -26,7 +26,7 @@ const ProductDetail = () => {
           <h1>{data.name}</h1>
           <p>{data.description}</p>
           <p>Rs.{data.price}</p>
-          <Rating value={data.rating} readonly />
+          <Rating value={Math.floor(data.rating)} readonly />
         </div>
 
         {data && <AddCart product={data} />}

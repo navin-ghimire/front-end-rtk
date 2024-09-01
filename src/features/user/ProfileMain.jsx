@@ -1,20 +1,19 @@
-import React from 'react'
-import useAuth from '../../hooks/useAuth'
-import UserProfile from './UserProfile';
-
+import useAuth from "../../hooks/useAuth";
+import OrderData from "./OrderData";
+import UserProfile from "./UserProfile";
 
 const ProfileMain = () => {
-const user = useAuth();
+  const user = useAuth();
 
   return (
     <div>
-    <UserProfile user={user} />
+      <UserProfile user={user} />
+      <OrderData user={user} />
 
 
 
-      
+
     </div>
   )
 }
-
 export default ProfileMain

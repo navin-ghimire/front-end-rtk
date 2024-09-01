@@ -28,8 +28,8 @@ export const userApi = createApi({
       query: (q) => ({
         url: `/${q.id}`,
         body: {
-           email: q.email,
-           fullname: q.fullname
+          email: q.email,
+          fullname: q.fullname
         },
         headers: {
           Authorization: q.token

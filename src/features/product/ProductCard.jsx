@@ -5,6 +5,8 @@ import {
   CardBody,
   CardFooter,
   Typography,
+  Button,
+  Tooltip,
   IconButton,
   Rating,
 } from "@material-tailwind/react";
@@ -14,7 +16,8 @@ import { useNavigate } from 'react-router';
 
 
 const ProductCard = ({ product: { image, title, description, rating, _id } }) => {
-  
+
+
   const nav = useNavigate();
   return (
     <Card onClick={() => nav(`/product-detail/${_id}`)} className="w-full shadow-lg cursor-pointer hover:shadow-2xl">
@@ -53,7 +56,7 @@ const ProductCard = ({ product: { image, title, description, rating, _id } }) =>
 
       </CardBody>
       <CardFooter className="pt-3">
-        <Rating value={rating} readonly />
+        <Rating value={Math.floor(rating)} readonly />
       </CardFooter>
     </Card>
   )

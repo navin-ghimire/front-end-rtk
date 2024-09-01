@@ -1,5 +1,6 @@
+import { useNavigate } from "react-router";
 import { Avatar, Button, Card, Typography } from "@material-tailwind/react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useGetAllProductsQuery } from "../product/productApi";
 import { imageUrl } from "../../constants/api_urls";
 
@@ -10,16 +11,9 @@ const AdminProducts = () => {
   const TABLE_HEAD = ["", "Title", "CreatedAt",
     "Edit", "Delete"];
 
-  if (isLoading) {
-    return <lottie-player src="https://lottie.host/baaa78ba-aff1-4e12-ba56-22d35b9ba72c/ujDLg3coH7.json" background="transparent" speed="1" loop autoplay></lottie-player>
-  };
-
-
-
-  if (isError) {
-    return <Typography color="red">Failed to load products: {error.message}</Typography>;
-  }
-
+    if (isLoading) {
+      return <lottie-player src="https://lottie.host/baaa78ba-aff1-4e12-ba56-22d35b9ba72c/ujDLg3coH7.json" background="transparent" speed="1" loop autoplay></lottie-player>
+    };
 
 
   return (

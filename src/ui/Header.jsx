@@ -120,12 +120,11 @@ const Header = () => {
                           dispatch(removeUser());
                           break;
                         case 'products':
-                          nav('/product-admin');
+                          nav('/product-admin')
                           break;
-                          case 'profile':
-                          nav('/user-profile');
+                        case 'profile':
+                          nav('/user-profile')
                           break;
-
 
 
                           closeMenu();
