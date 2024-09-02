@@ -12,6 +12,7 @@ import AdminRoute from './ui/AdminRoute';
 import CartPage from './features/cart/CartPage';
 
 import ProfileMain from './features/user/ProfileMain';
+import OrderDetail from './features/order/OrderDetail';
 
 
 const App = () => {
@@ -72,6 +73,10 @@ const App = () => {
         {
           path: 'user-profile',
           element: <ProfileMain />
+        },
+        {
+          path: 'user-order/:id',
+          element: <OrderDetail />
         },
 
       ]

@@ -34,10 +34,10 @@ const UserProfile = ({ user }) => {
     validationSchema: updateSchema
   });
   return (
-    <div className="p-4 w-80 max-w-screen-lg sm:w-96">
+    <div className="p-4">
       <Card color="transparent" shadow={false}>
         <Typography variant="h4" color="blue-gray">
-          Login
+          Profile
         </Typography>
 
         <form className="mt-5 mb-2 " onSubmit={handleSubmit}>

@@ -13,7 +13,6 @@ export const orderApi = createApi({
       query: (id) => ({
         url: `/${id}`,
         method: 'GET',
-
       }),
       providesTags: ['Orders']
     }),
