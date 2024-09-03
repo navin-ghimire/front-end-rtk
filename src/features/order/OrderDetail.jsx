@@ -7,10 +7,11 @@ import { imageUrl } from '../../constants/api_urls';
 const OrderDetail = () => {
   const { id } = useParams();
   const { data, isLoading, error } = useGetOrderByIdQuery(id);
+  
+    if (isLoading) {
+      return <lottie-player src="https://lottie.host/baaa78ba-aff1-4e12-ba56-22d35b9ba72c/ujDLg3coH7.json" background="transparent" speed="1" loop autoplay></lottie-player>
+    };
 
-  if (isLoading) {
-    return <lottie-player src="https://lottie.host/baaa78ba-aff1-4e12-ba56-22d35b9ba72c/ujDLg3coH7.json" background="transparent" speed="1" loop autoplay></lottie-player>
-  };
 
   return (
     <div className='p-4'>

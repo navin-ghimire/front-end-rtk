@@ -4,14 +4,18 @@ import { useParams } from 'react-router';
 import { imageUrl } from '../../constants/api_urls';
 import { Rating } from '@material-tailwind/react';
 import AddCart from '../cart/AddCart';
+import ReviewList from '../review/ReviewList';
+import AddReview from '../review/AddReview';
+import useAuth from '../../hooks/useAuth';
 
 const ProductDetail = () => {
   const { id } = useParams();
   const { isLoading, error, data } = useGetProductByIdQuery(id);
+  const user = useAuth();
 
   if (isLoading) {
-    return <lottie-player src="https://lottie.host/baaa78ba-aff1-4e12-ba56-22d35b9ba72c/ujDLg3coH7.json" background="transparent" speed="1" loop autoplay></lottie-player>
-  };
+    return <h1>Loading....</h1>
+  }
 
 
 
@@ -35,7 +39,12 @@ const ProductDetail = () => {
 
 
       </div>
-      {/* <ProductReview user={user} id={product._id} reviews={product.reviews} /> */}
+
+      <div className='p-10'>
+        <AddReview user={user} id={data?._id} />
+        <ReviewList reviews={data?.reviews} />
+      </div>
+
     </>
   )
 }

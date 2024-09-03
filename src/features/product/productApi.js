@@ -62,6 +62,18 @@ export const productApi = createApi({
       invalidatesTags: ['Products']
     }),
 
+    addReview: builder.mutation({
+      query: (q) => ({
+        url: `/reviews/${q.id}`,
+        body: q.body,
+        headers: {
+          Authorization: q.token
+        },
+        method: 'POST',
+      }),
+      invalidatesTags: ['Products']
+    }),
+
 
 
   })
@@ -71,4 +83,4 @@ export const productApi = createApi({
 
 });
 
-export const { useGetAllProductsQuery, useGetProductByIdQuery, useAddProductMutation, useRemoveProductByIdMutation, useUpdateProductMutation } = productApi;
+export const { useGetAllProductsQuery, useGetProductByIdQuery, useAddProductMutation, useRemoveProductByIdMutation, useUpdateProductMutation, useAddReviewMutation } = productApi;
