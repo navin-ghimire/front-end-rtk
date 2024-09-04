@@ -13,13 +13,12 @@ import CartPage from './features/cart/CartPage';
 
 import ProfileMain from './features/user/ProfileMain';
 import OrderDetail from './features/order/OrderDetail';
-import SearchPage from './features/review/SearchPage';
+import UserRoute from './ui/UserRoute';
+import NoLoginRoute from './ui/NoLoginRoute';
 
 
 const App = () => {
-
-
-
+  //routes
   const router = createBrowserRouter([
     {
       path: '/',
@@ -29,14 +28,21 @@ const App = () => {
           index: true,
           element: <Main />
         },
+
         {
-          path: 'login',
-          element: <Login />
+          element: <NoLoginRoute />,
+          children: [
+            {
+              path: 'login',
+              element: <Login />
+            },
+            {
+              path: 'register',
+              element: <Register />
+            },
+          ]
         },
-        {
-          path: 'register',
-          element: <Register />
-        },
+
 
         //admin routes
 
@@ -67,20 +73,28 @@ const App = () => {
         },
 
         {
-          path: 'cart-page',
-          element: <CartPage />
-        },
+          element: <UserRoute />,
+          children: [
+            {
 
-        {
-          path: 'user-profile',
-          element: <ProfileMain />
-        },
-        {
-          path: 'user-order/:id',
-          element: <OrderDetail />
-        },
-        { path: 'search-page/:query',
-          element: <SearchPage /> },
+              path: 'cart-page',
+              element: <CartPage />
+            },
+
+            {
+              path: 'user-profile',
+              element: <ProfileMain />
+            },
+            {
+              path: 'user-order/:id',
+              element: <OrderDetail />
+            },
+            // { path: 'search-page/:query',
+        //   element: <SearchPage /> },
+
+          ]
+        }
+
 
       ]
     }
@@ -89,3 +103,6 @@ const App = () => {
 }
 
 export default App
+
+
+    
