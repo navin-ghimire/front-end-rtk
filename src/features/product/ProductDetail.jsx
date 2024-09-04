@@ -14,8 +14,9 @@ const ProductDetail = () => {
   const user = useAuth();
 
   if (isLoading) {
-    return <h1>Loading....</h1>
-  }
+    return <lottie-player src="https://lottie.host/baaa78ba-aff1-4e12-ba56-22d35b9ba72c/ujDLg3coH7.json" background="transparent" speed="1" loop autoplay></lottie-player>
+  };
+
 
 
 

@@ -13,6 +13,7 @@ import CartPage from './features/cart/CartPage';
 
 import ProfileMain from './features/user/ProfileMain';
 import OrderDetail from './features/order/OrderDetail';
+import SearchPage from './features/review/SearchPage';
 
 
 const App = () => {
@@ -78,6 +79,8 @@ const App = () => {
           path: 'user-order/:id',
           element: <OrderDetail />
         },
+        { path: 'search-page/:query',
+          element: <SearchPage /> },
 
       ]
     }
