@@ -7,7 +7,7 @@ const UserRoute = () => {
   const user = useAuth();
 
 
-  return user ? <Outlet /> : <Navigate to={'/'} replace />
+  return user ? <Outlet /> : <Navigate to={'/login'} replace />
 
 
 }
