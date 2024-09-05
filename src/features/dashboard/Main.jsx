@@ -14,7 +14,7 @@ const Main = () => {
   return (
     <div className='p-4 grid grid-cols-3 gap-6'>
 
-      {data && data.map((product) => {
+      {data && data.products.map((product) => {
         return <ProductCard key={product._id} product={product} />
       })}
 

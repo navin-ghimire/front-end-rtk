@@ -11,7 +11,7 @@ const OrderDetail = () => {
     if (isLoading) {
       return <lottie-player src="https://lottie.host/baaa78ba-aff1-4e12-ba56-22d35b9ba72c/ujDLg3coH7.json" background="transparent" speed="1" loop autoplay></lottie-player>
     };
-
+console.log(data)
 
   return (
     <div className='p-4'>
@@ -20,7 +20,7 @@ const OrderDetail = () => {
 
       <div className="">
         <div >
-          {data && data?.product.map(({ qty, product: { image, price, title }, _id }) => {
+          {data && data?.products?.map(({  image, price, title , _id}) => {
             return <div key={_id} className="grid grid-cols-2">
               <div>
                 <img src={`${imageUrl}${image}`} alt="" className='h-[70px]  w-[90px]' />
