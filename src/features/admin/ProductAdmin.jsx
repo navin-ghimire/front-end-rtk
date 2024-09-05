@@ -44,7 +44,7 @@ const AdminProducts = () => {
             </tr>
           </thead>
           <tbody>
-            {data?.map(({ title, image, createdAt, _id }, index) => {
+            {data?.products?.map(({ title, image, createdAt, _id }, index) => {
               const isLast = index === data.length - 1;
               const classes = isLast ? "p-4" : "p-4 border-b border-blue-gray-50";
 
