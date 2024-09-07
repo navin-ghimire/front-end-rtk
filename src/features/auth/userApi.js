@@ -16,6 +16,7 @@ export const userApi = createApi({
       })
     }),
 
+    
     registerUser: builder.mutation({
       query: (q) => ({
         url: '/register',

@@ -19,7 +19,7 @@ const OrderDetail = () => {
 
       <div className="">
         <div >
-          {data && data?.products?.map(({ product:{ image, price, title }, _id, qtyn}) => {
+          {data && data?.products?.map(({ product:{ image, price, title }, _id, qty }) => {
             return <div key={_id} className="grid grid-cols-2">
               <div>
                 <img src={`${imageUrl}${image}`} alt="" className='h-[70px]  w-[90px]' />

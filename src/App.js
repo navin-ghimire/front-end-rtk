@@ -15,6 +15,7 @@ import ProfileMain from './features/user/ProfileMain';
 import OrderDetail from './features/order/OrderDetail';
 import UserRoute from './ui/UserRoute';
 import NoLoginRoute from './ui/NoLoginRoute';
+import SearchPage from './features/searchfile/SearchPage';
 
 
 const App = () => {
@@ -89,11 +90,14 @@ const App = () => {
               path: 'user-order/:id',
               element: <OrderDetail />
             },
-            // { path: 'search-page/:query',
-        //   element: <SearchPage /> },
 
           ]
-        }
+        },
+
+        { 
+         path: 'search-page/:query',
+          element: <SearchPage /> 
+        },
 
 
       ]
