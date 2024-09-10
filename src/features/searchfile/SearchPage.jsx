@@ -41,11 +41,13 @@ const SearchPage = () => {
               </Typography>
             </CardBody>
             <CardFooter className="pt-0">
-              <Button onClick={() => nav(`/product/${_id}`)}>Read More</Button>
+              <Button onClick={() => nav(`/product-detail/${_id}`)}>Read More</Button>
             </CardFooter>
           </Card>
-        })}
+        })},
 
+      
+          
 
 
       </div>
