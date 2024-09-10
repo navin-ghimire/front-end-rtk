@@ -95,7 +95,7 @@ const App = () => {
         },
 
         { 
-         path: 'search-page/:query',
+         path: 'search-page/:search',
           element: <SearchPage /> 
         },
 

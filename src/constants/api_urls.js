@@ -1,8 +1,8 @@
 
 // render bata live garda use garni 
 
-// export const baseUrl = 'https://back-end-server-c9oz.onrender.com/api';
-// export const imageUrl = 'https://back-end-server-c9oz.onrender.com';
+export const baseUrl = 'https://back-end-server-c9oz.onrender.com/api';
+export const imageUrl = 'https://back-end-server-c9oz.onrender.com';
 
 
 // locally live garda
@@ -12,6 +12,6 @@
 
 
 
-export const baseUrl = 'http://localhost:5000/api';
-export const imageUrl = 'http://localhost:5000';
+// export const baseUrl = 'http://localhost:5000/api';
+// export const imageUrl = 'http://localhost:5000';
 

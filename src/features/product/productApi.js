@@ -12,7 +12,9 @@ export const productApi = createApi({
       query: (q) => ({
         url: '/',
         method: 'GET',
-
+        params:{
+          search: q?.search 
+        }
       }),
       providesTags: ['Products']
     }),
