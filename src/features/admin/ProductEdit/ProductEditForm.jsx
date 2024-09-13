@@ -83,7 +83,7 @@ const ProductEditForm = ({ product }) => {
               toast.success('product added succesfully');
               nav(-1);
             } else {
-              console.log('please provide image');
+              //console.log('please provide image');
             }
 
 
@@ -100,7 +100,7 @@ const ProductEditForm = ({ product }) => {
 
 
       },
-      //  validationSchema: productSchema
+      validationSchema: productSchema
 
     });
 

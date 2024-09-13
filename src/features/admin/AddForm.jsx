@@ -60,7 +60,7 @@ const AddForm = () => {
         }
 
       },
-      // validationSchema: productSchema
+      validationSchema: productSchema
 
     });
 

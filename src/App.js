@@ -17,6 +17,10 @@ import UserRoute from './ui/UserRoute';
 import NoLoginRoute from './ui/NoLoginRoute';
 import SearchPage from './features/searchfile/SearchPage';
 
+import PlaceOrder from './features/user/PlaceOrder';
+import ShippingAddress from './features/user/ShippingAdress';
+
+
 
 const App = () => {
   //routes
@@ -90,6 +94,14 @@ const App = () => {
               path: 'user-order/:id',
               element: <OrderDetail />
             },
+            // {
+            //   path: 'shippingAddress',
+            //   element: <ShippingAddress />
+            // },
+            // {
+            //   path: 'placeOrder',
+            //   element: <PlaceOrder />
+            // }
 
           ]
         },
